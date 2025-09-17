@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(node:*)",
+      "Bash(npm install:*)",
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "Bash(timeout 5s npm run dev)",
+      "Bash(find:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(curl:*)",
+      "Bash(docker logs:*)",
+      "Bash(docker exec:*)",
+      "Bash(npm run setup-new-db:*)"
+    ],
+    "deny": []
+  }
+}
