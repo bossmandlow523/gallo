@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(rg:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run typecheck:*)",
+      "Read(//c/Users/nicks/Downloads/**)",
+      "Bash(powershell.exe:*)",
+      "Read(//c/Users/nicks/OneDrive/Pictures/Screenshots/**)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

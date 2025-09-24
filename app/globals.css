@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&family=Permanent+Marker&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255; /* #FFFFFF */
+    --foreground: 74 74 74; /* #4A4A4A */
+    --card: 255 255 255; /* #FFFFFF */
+    --card-foreground: 31 41 55; /* #1F2937 */
+    --primary: 46 124 184; /* #2E7CB8 */
+    --primary-foreground: 255 255 255; /* #FFFFFF */
+    --secondary: 241 245 249; /* #F1F5F9 */
+    --secondary-foreground: 15 23 42; /* #0F172A */
+    --muted: 247 247 247; /* #F7F7F7 */
+    --muted-foreground: 107 114 128; /* #6B7280 */
+    --accent: 74 158 224; /* #4A9EE0 */
+    --accent-foreground: 255 255 255; /* #FFFFFF */
+    --cyan: 0 247 255; /* #00f7ff */
+    --cyan-foreground: 255 255 255; /* #FFFFFF */
+    --destructive: 239 68 68; /* #EF4444 */
+    --destructive-foreground: 255 255 255; /* #FFFFFF */
+    --border: 229 231 235; /* #E5E7EB */
+    --input: 229 231 235; /* #E5E7EB */
+    --ring: 74 158 224; /* #4A9EE0 */
+    --heading: 24 56 98; /* #183862 */
+    --nav-start: 27 24 37; /* #1B1825 */
+    --nav-end: 24 56 98; /* #183862 */
+    --radius: 8px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-muted-foreground/30;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Focus styles */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom selection colors */
+  ::selection {
+    @apply bg-accent/20 text-accent-foreground;
+  }
+
+  /* Typography improvements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-modak tracking-wide text-heading;
+  }
+
+  /* Form improvements */
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='password'],
+  select,
+  textarea {
+    @apply focus:border-ring focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+}
+
+@layer components {
+  /* Button variants */
+  .btn {
+    @apply focus-ring inline-flex items-center justify-center rounded-gallo px-6 py-3 font-bebas-neue text-sm tracking-wider transition-all duration-200 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn transform bg-gallo-button text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-gallo-button;
+  }
+
+  .btn-cyan {
+    @apply btn transform bg-gallo-button-cyan text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply btn transform border-2 border-accent bg-transparent text-accent transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-white hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply btn border border-border bg-background hover:bg-muted hover:text-muted-foreground;
+  }
+
+  /* Card components */
+  .card {
+    @apply rounded-gallo border border-border/50 bg-card p-6 text-card-foreground shadow-gallo-card;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-gallo-card-hover;
+  }
+
+  /* Service card specific styling */
+  .service-card {
+    @apply card card-hover border-t-4 border-t-cyan bg-gradient-to-br from-white to-cyan/5 text-center transition-all duration-300 hover:to-cyan/10;
+  }
+
+  /* Plan card styling */
+  .plan-card {
+    @apply card border border-border bg-gradient-to-br from-white to-cyan/5 transition-all duration-300 hover:-translate-y-1 hover:border-cyan/50 hover:shadow-gallo-card-hover;
+  }
+
+  /* Form components */
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-heading;
+  }
+
+  .form-input {
+    @apply block w-full rounded-gallo border-2 border-input bg-background px-3 py-2 text-sm transition-colors focus:border-ring focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .form-select {
+    @apply form-input;
+  }
+
+  .form-textarea {
+    @apply form-input min-h-[120px] resize-y;
+  }
+
+  /* Container and section styling */
+  .container {
+    @apply mx-auto max-w-7xl px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 lg:py-20;
+  }
+
+  /* Pattern background utility */
+  .pattern-bg {
+    @apply relative overflow-hidden;
+  }
+
+  .pattern-bg::before {
+    @apply absolute inset-0 bg-gallo-pattern opacity-35 content-[''];
+    pointer-events: none;
+  }
+
+  /* Navigation styling */
+  .nav-link {
+    @apply relative text-white transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:text-accent hover:after:w-full;
+  }
+
+  /* Hero section styling */
+  .hero-bg {
+    @apply relative bg-gallo-hero;
+  }
+
+  .hero-bg::before {
+    @apply absolute inset-0 bg-gradient-to-b from-black/25 to-black/25 content-[''];
+    pointer-events: none;
+  }
+
+  /* Hero section headings override */
+  #home h1,
+  #home h2,
+  #home h3,
+  #home h4,
+  #home h5,
+  #home h6 {
+    @apply font-bebas-neue;
+  }
+
+  /* Gallery item styling */
+  .gallery-item {
+    @apply card overflow-hidden transition-transform duration-300 hover:scale-[1.02];
+  }
+
+  /* Testimonial styling */
+  .testimonial-card {
+    @apply rounded-xl bg-muted p-8 text-center;
+  }
+
+  /* Contact form styling */
+  .contact-form {
+    @apply card text-foreground;
+  }
+
+  /* Footer styling */
+  .footer-link {
+    @apply text-white transition-colors duration-300 hover:text-accent;
+  }
+}
+
+@layer utilities {
+  /* Font utilities */
+  .modak-regular {
+    font-family: 'Modak', system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .font-modak {
+    font-family: 'Modak', system-ui;
+  }
+
+  .permanent-marker-regular {
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Text utilities */
+  .text-display-lg {
+    @apply text-[56px] font-bold leading-tight tracking-tight;
+  }
+
+  .text-display-md {
+    @apply text-[48px] font-bold leading-tight tracking-tight;
+  }
+
+  .text-display-sm {
+    @apply text-[40px] font-semibold leading-tight tracking-tight;
+  }
+
+  .text-heading-xl {
+    @apply text-[36px] font-semibold leading-tight tracking-tight;
+  }
+
+  .text-heading-lg {
+    @apply text-[28px] font-medium leading-tight;
+  }
+
+  .text-heading-md {
+    @apply text-[24px] font-medium leading-tight;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  /* Layout utilities */
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  .grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
