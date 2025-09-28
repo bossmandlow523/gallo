@@ -9,7 +9,8 @@
       "Read(//c/Users/nicks/Downloads/**)",
       "Bash(powershell.exe:*)",
       "Read(//c/Users/nicks/OneDrive/Pictures/Screenshots/**)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }
