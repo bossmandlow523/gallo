@@ -145,7 +145,7 @@ export function Header() {
 
                   <div className="py-6">
                     <Button
-                      variant="primary"
+                      variant="default"
                       className="w-full"
                       onClick={() => {
                         setMobileMenuOpen(false);
