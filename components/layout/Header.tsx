@@ -78,7 +78,7 @@ export function Header() {
         {/* CTA Button */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button
-            variant="primary"
+            variant="default"
             onClick={() => {
               document.querySelector('#contact')?.scrollIntoView({
                 behavior: 'smooth',
