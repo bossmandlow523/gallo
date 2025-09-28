@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const benefits = [
@@ -22,8 +23,13 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="lg:order-2"
           >
-            <div className="flex h-96 items-center justify-center rounded-xl bg-gallo-button text-lg font-medium text-white lg:h-[400px]">
-              [Professional Service Team Photo]
+            <div className="relative h-96 overflow-hidden rounded-xl lg:h-[400px]">
+              <Image
+                src="/boat-service.png"
+                alt="Professional marine detailing service - pristine boat on clear water"
+                fill
+                className="object-cover"
+              />
             </div>
           </motion.div>
 
@@ -34,11 +40,11 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="lg:order-1"
           >
-            <h2 className="mb-6 text-heading-xl">
+            <h2 className="mb-6 font-bebas-neue text-5xl tracking-wide text-white md:text-6xl">
               Expert Care for Your Valuable Investments
             </h2>
 
-            <div className="space-y-6 text-muted-foreground">
+            <div className="space-y-6 text-white/90">
               <p>
                 Gallo Shines combines precision, power, and premium service to
                 deliver exceptional detailing results. Our specialized knowledge
@@ -54,7 +60,9 @@ export function AboutSection() {
             </div>
 
             <div className="mt-8">
-              <h3 className="mb-4 text-heading-md">Why Choose Gallo Shines?</h3>
+              <h3 className="mb-4 font-bebas-neue text-3xl tracking-wide text-white">
+                Why Choose Gallo Shines?
+              </h3>
               <ul className="space-y-3">
                 {benefits.map((benefit, index) => (
                   <motion.li
@@ -66,7 +74,7 @@ export function AboutSection() {
                     className="flex items-start"
                   >
                     <svg
-                      className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-accent"
+                      className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-[#00f7ff]"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -76,7 +84,7 @@ export function AboutSection() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span className="text-muted-foreground">{benefit}</span>
+                    <span className="text-white/90">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>

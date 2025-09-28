@@ -22,7 +22,7 @@ const serviceOptions = [
   { value: 'marine', label: 'Marine Detailing' },
   { value: 'auto', label: 'Auto Detailing' },
   { value: 'rv', label: 'RV Cleaning' },
-  { value: 'pressure', label: 'MARINE DETAILING' },
+  { value: 'pressure', label: 'Pressure Washing' },
   { value: 'multiple', label: 'Multiple Services' },
 ];
 
@@ -88,7 +88,7 @@ export function ContactForm() {
             />
           </svg>
         </div>
-        <h3 className="mb-2 text-xl font-semibold text-heading">
+        <h3 className="mb-2 text-heading-md text-heading">
           Message Sent Successfully!
         </h3>
         <p className="text-muted-foreground">

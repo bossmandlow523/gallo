@@ -52,55 +52,59 @@ export function ServicesSection() {
                 scale: 1.02,
                 transition: { duration: 0.3, ease: 'easeOut' },
               }}
-              className="service-card group"
+              className="group relative flex flex-col rounded-2xl border-2 border-white/20 bg-white/10 p-8 text-center backdrop-blur-sm transition-all duration-300 hover:border-[#00f7ff]/50"
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: '1000px',
               }}
             >
-              <motion.div
-                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gallo-button-cyan text-2xl text-white shadow-lg"
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 360,
-                  transition: { duration: 0.6, ease: 'easeInOut' },
-                }}
-              >
-                {service.icon}
-              </motion.div>
+              <div className="flex flex-1 flex-col">
+                <motion.div
+                  className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#00f7ff] text-2xl text-white shadow-lg"
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 360,
+                    transition: { duration: 0.6, ease: 'easeInOut' },
+                  }}
+                >
+                  {service.icon}
+                </motion.div>
 
-              <motion.h3
-                className="mb-4 bg-gradient-to-r from-cyan-600 via-cyan-400 to-cyan-600 bg-clip-text font-bebas-neue text-3xl tracking-wide text-transparent drop-shadow-lg"
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 },
-                }}
-              >
-                {service.title}
-              </motion.h3>
+                <motion.h3
+                  className="mb-4 font-bebas-neue text-2xl tracking-wide text-[#00f7ff]"
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  {service.title}
+                </motion.h3>
 
-              <p className="mb-6 text-muted-foreground">
-                {service.description}
-              </p>
+                <p className="mb-8 text-sm leading-relaxed text-white/90">
+                  {service.description}
+                </p>
 
-              <ul className="space-y-2 text-left text-sm text-muted-foreground">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start">
-                    <svg
-                      className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-accent"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+                <ul className="flex-1 space-y-3 text-left">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      <svg
+                        className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#00f7ff]"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span className="text-sm leading-relaxed text-white/90">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           ))}
         </div>

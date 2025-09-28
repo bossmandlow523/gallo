@@ -16,7 +16,7 @@ const footerSections = [
       { name: 'Marine Detailing', href: '#services' },
       { name: 'Auto Detailing', href: '#services' },
       { name: 'RV Cleaning', href: '#services' },
-      { name: 'MARINE DETAILING', href: '#services' },
+      { name: 'Pressure Washing', href: '#services' },
       { name: 'Ceramic Coating', href: '#services' },
     ],
   },
@@ -47,9 +47,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {footerSections.map(section => (
             <div key={section.title} className="space-y-4">
-              <h3 className="text-lg font-semibold text-accent">
-                {section.title}
-              </h3>
+              <h3 className="text-heading-md text-accent">{section.title}</h3>
 
               {section.content && (
                 <div className="space-y-2">
